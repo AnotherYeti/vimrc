@@ -35,7 +35,7 @@ set guioptions=
 
 "font nonsense
 set encoding=utf-8
-set fileencoding=utf-8
+"set fileencoding=utf-8
 
 "keep performance OK
 let g:airline_extensions=[]
@@ -60,8 +60,8 @@ set noshowmode
 
 "some lightline config
 let g:lightline = {
-  \ 'separator': { 'left': 'î°', 'right': 'î¶' },
-  \ 'subseparator': { 'left': '', 'right': '|' },
+  \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+  \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
   \ 'colorscheme': 'dracula',
   \ 'active': {
   \   'left': [['filename', 'modified'],['gitbranch'], ['typeinfo']],
@@ -76,7 +76,7 @@ let g:lightline = {
   \   'typeinfo': 'TypeInfo'
   \ },
   \ 'component' : {
-  \   'lineinfo': 'î¡%3l:%-2v'
+  \   'lineinfo': "\uE0A1 %3l:%-2v"
   \ }
   \ }
 
@@ -89,35 +89,35 @@ let g:lightline#ale#indicator_ok = "\uf00c "
 " lower case takes the current variable definition line, and puts it into
 " the inject function
 " upper case makes a new inject function with tthe variable
-function AddZenject()
+function! AddZenject()
   let @0 = 'yygg/Inject]/{kp==$xk$a,/{"0pdW$bithis.$xa = bhyb$pa;=='
   normal @0
 endfunction
 
-function CreateZenject()
-  let @0 = 'o[Zenject.Inject]public void Inject() [�kb{}kkkkk^yyjjjp==$xyyjopkdd=dExi=�kbathis.lyw$a = pa;==kkkkkk'
+function! CreateZenject()
+  let @0 = 'o[Zenject.Inject]public void Inject() [kb{}kkkkk^yyjjjp==$xyyjopkdd=dExi=kbathis.lyw$a = pa;==kkkkkk'
   normal @0
 endfunction
 
 " test setup macro
 " takes the current line with some test name,
 " and sets up a dummy test on it, and goes to the next line
-let @t = '^ko[Test]j^ipublic avoid $a()ü [kb{}kothrow new System.NotImplementedException();jjI'
+let @t = '^ko[Test]j^ipublic avoid $a()ÂÃ¼ [Âkb{}kothrow new System.NotImplementedException();jjI'
 
 " comment title macro
 " takes the current line with some commant, and  puts quotes around it
-let @c = '^ikA///kb=======bllywppppyyjpk^i//   kb'
+let @c = '^ikA///Âkb=======bllywppppyyjpk^i//   Âkb'
 
 " query build macro
 " builds a query
 " and sets up a dummy test on it, and goes to the next line
-let @q = 'oqueryname = GetEntityQuery(new EntityQueryDesc {});koAll = new [ ]kbkb kb] {{kb},None = new[kb [] {}kkkko	ComponentType.ReadOnly<T>()yyjjpjddkwwwjkkkkkk^'
+let @q = 'oqueryname = GetEntityQuery(new EntityQueryDesc {});koAll = new [ ]ÂkbÂkb Âkb] {{Âkb},None = new[Âkb [] {}kkkko	ComponentType.ReadOnly<T>()yyjjpjddkwwwjkkkkkk^'
 
 
 
 function! LightLineBranch() abort
   let head = fugitive#head()
-  return head ==# '' ? '' : 'î  ' . head
+  return head ==# '' ? '' : "\ue0a0 " . head
 endfunction
 
 function! UpdateTypeInfo() abort
