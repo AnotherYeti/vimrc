@@ -35,7 +35,7 @@ set guioptions=
 
 "font nonsense
 set encoding=utf-8
-"set fileencoding=utf-8
+set fileencoding=utf-8
 
 "keep performance OK
 let g:airline_extensions=[]
@@ -93,25 +93,24 @@ function! AddZenject()
   let @0 = 'yygg/Inject]/{kp==$xk$a,/{"0pdW$bithis.$xa = bhyb$pa;=='
   normal @0
 endfunction
-
 function! CreateZenject()
-  let @0 = 'o[Zenject.Inject]public void Inject() [kb{}kkkkk^yyjjjp==$xyyjopkdd=dExi=kbathis.lyw$a = pa;==kkkkkk'
+  let @0 = '^yyopublic void Inject(ko[Zenject.IOnj�kb�kb�kbnject]j$aopkdd==$xa,xo) {}kopxkkyyjjpkdd==$^dExx$a = a�kbbhyb$pa;kkkkkk'
   normal @0
 endfunction
 
 " test setup macro
 " takes the current line with some test name,
 " and sets up a dummy test on it, and goes to the next line
-let @t = '^ko[Test]j^ipublic avoid $a()ÂÃ¼ [Âkb{}kothrow new System.NotImplementedException();jjI'
+let @t = '^ko[Test]j^ipublic avoid $a() {}kothrow new System.NotImplementedException();jjI'
 
 " comment title macro
 " takes the current line with some commant, and  puts quotes around it
-let @c = '^ikA///Âkb=======bllywppppyyjpk^i//   Âkb'
+let @c = '^ikA//=======bllywppppyyjpk^i//   '
 
 " query build macro
 " builds a query
 " and sets up a dummy test on it, and goes to the next line
-let @q = 'oqueryname = GetEntityQuery(new EntityQueryDesc {});koAll = new [ ]ÂkbÂkb Âkb] {{Âkb},None = new[Âkb [] {}kkkko	ComponentType.ReadOnly<T>()yyjjpjddkwwwjkkkkkk^'
+let @q = 'oqueryname = GetEntityQuery(new EntityQueryDesc {});koAll = new [] {},None = new [] {}kkkko	ComponentType.ReadOnly<T>()yyjjpjddkwwwjkkkkkk^'
 
 
 
