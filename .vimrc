@@ -94,7 +94,7 @@ function! AddZenject()
   normal @0
 endfunction
 function! CreateZenject()
-  let @0 = '^yyopublic void Inject(ko[Zenject.IOnj€kb€kb€kbnject]j$aopkdd==$xa,xo) {}kopxkkyyjjpkdd==$^dExx$a = a€kbbhyb$pa;kkkkkk'
+  let @0 = 'yyo[Zenject.Inject]public void Inject()Â€Ã¼ {Â€Ã¼}kkp==$xyyjp==dEilxithis.4lh^wlyw$a = pa;kkkkkk'
   normal @0
 endfunction
 
@@ -105,7 +105,10 @@ let @t = '^ko[Test]j^ipublic avoid $a() {}kothrow new System.NotImplemented
 
 " comment title macro
 " takes the current line with some commant, and  puts quotes around it
-let @c = '^ikA//=======bllywppppyyjpk^i//   '
+function! CreateCommentBlock()
+  let @0 = '^ikA//=======bllywppppyyjpk^i//   '
+  normal @0
+endfunction
 
 " query build macro
 " builds a query
@@ -188,6 +191,7 @@ map  <Leader>a <Plug>(easymotion-bd-jk)
 "macro functions
 nnoremap <leader>mZ :call CreateZenject()<cr>
 nnoremap <leader>mz :call AddZenject()<cr>
+nnoremap <leader>m= :call CreateCommentBlock()<cr>
 
 "omni/error lookups
 autocmd CursorMoved *.cs call UpdateTypeInfo()
